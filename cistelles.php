@@ -223,10 +223,27 @@ onClick="javascript:window.location = 'cistelles2.php?id2=<?php echo $gdata.'&id
   		</div>
 	</div>
 
- 
-
 
 <?php echo $nouproducte; ?>
+
+	    
+<?php // Botones para modificar las variables “quantitat” de todos los productos de comanda abierta.
+if(isset($_POST['button1'])) { //Copia los valores de "cistella" en todos los productos de la comanda abierta
+	$query8= "UPDATE comanda AS c, comanda_linia AS cl SET cl.cistella = cl.quantitat WHERE cl.numero = c.numero AND c.data='$gbd_data';";
+	mysql_query($query8) or die('Error, insert query8 failed');
+	$nota="<div class='alert alert--info u-mb-1'>Se han introducido correctamente los datos de las cestas</div>";
+}
+if(isset($_POST['button2'])) { //Pone a cero todos los productos de la comanda abierta
+	$query9= "UPDATE comanda AS c, comanda_linia AS cl SET cl.cistella = 0.000 WHERE cl.numero = c.numero AND c.data='$gbd_data';";
+	mysql_query($query9) or die('Error, insert query9 failed');
+	$nota="<div class='alert alert--info u-mb-1'>Se han puesto a cero los datos de las cestas</div>";
+}
+?>
+
+<div class="u-cf"><form method="post">
+	<input class="button button--animated u-mb-1 pull-right " type="submit" name="button1" value="Añadir pedidos a cesta" onclick="return confirm('Se procede a asignar los valores de la columna pedido en la columna cistella \nAceptar: MODIFICA cistelles \nCancelar: NO MODIFICA cistelles');"/> 
+	<input class="button button--animated u-mb-1 pull-right " type="submit" name="button2" value="Poner a cero cesta" onclick="return confirm('Se procede a poner a cero la columna cistella \nAceptar: MODIFICA cistelles \nCancelar: NO MODIFICA cistelles');"/>
+</form></div>
 
 <?php echo $nota; ?>
 
