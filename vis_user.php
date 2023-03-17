@@ -36,9 +36,9 @@ if ($_SESSION['image_is_logged_in'] == 'true') {
         <div class="container">
 
             <div class="u-cf">
-                <h1 class="pull-left"> Ver familia <?php echo $nom; ?> </h1>
+                <h1 class="pull-left"> Veure fam&iacute;lia <?php echo $nom; ?> </h1>
                 <?php
-                if ($nom == $user && $tip == "super") {
+                if ($nom == $user && ( $tip == "super" or $tip == "cist")) {
 
                     ?>
                     <div class="pull-right u-mt-1 u-mb-1">
@@ -60,7 +60,7 @@ if ($_SESSION['image_is_logged_in'] == 'true') {
                     <thead>
                     <tr>
                         <td class="u-text-semibold u-text-center" colspan="2">
-                            <h2>Datos personales</h2>
+                            <h2>Dades personals</h2>
                         </td>
                     </tr>
                     </thead>
@@ -69,7 +69,7 @@ if ($_SESSION['image_is_logged_in'] == 'true') {
 
 
                     <tr class="cos_majus">
-                        <td width="50%" class="u-text-semibold u-text-right u-text-right">Nombre:</td>
+                        <td width="50%" class="u-text-semibold u-text-right u-text-right">Nom:</td>
                         <td width="50%"><?php echo $nom; ?></td>
                     </tr>
                     <tr>
@@ -77,19 +77,19 @@ if ($_SESSION['image_is_logged_in'] == 'true') {
                         <td><?php echo $tip; ?></td>
                     </tr>
                     <tr class="cos_majus">
-                        <td class="u-text-semibold u-text-right">Grupo:</td>
+                        <td class="u-text-semibold u-text-right">Data de recollida:</td>
                         <td><?php echo $dia; ?></td>
                     </tr>
                     <tr class="cos_majus">
-                        <td class="u-text-semibold u-text-right">Componentes:</td>
+                        <td class="u-text-semibold u-text-right">Components:</td>
                         <td><?php echo $components; ?></td>
                     </tr>
                     <tr class="cos_majus">
-                        <td class="u-text-semibold u-text-right">Teléfono:</td>
+                        <td class="u-text-semibold u-text-right">Telèfon principal:</td>
                         <td><?php echo $tel1; ?></td>
                     </tr>
                     <tr class="cos_majus">
-                        <td class="u-text-semibold u-text-right">Teléfono 2:</td>
+                        <td class="u-text-semibold u-text-right">Telèfon alternatiu:</td>
                         <td><?php echo $tel2; ?></td>
                     </tr>
                     <tr class="cos_majus">
@@ -97,19 +97,19 @@ if ($_SESSION['image_is_logged_in'] == 'true') {
                         <td><?php echo $kuota; ?></td>
                     </tr>
                     <tr class="cos_majus">
-                        <td class="u-text-semibold u-text-right">Fecha de Alta</td>
+                        <td class="u-text-semibold u-text-right">Data d'alta</td>
                         <td><?php echo $fechaalta; ?></td>
                     </tr>
                     <tr>
-                        <td class="u-text-semibold u-text-right">E-mail:</td>
+                        <td class="u-text-semibold u-text-right">E-mail principal:</td>
                         <td class="cos"><?php echo $email1; ?></td>
                     </tr>
                     <tr>
-                        <td class="u-text-semibold u-text-right">E-mail 2:</td>
+                        <td class="u-text-semibold u-text-right">E-mail alternatiu:</td>
                         <td class="cos"><?php echo $email2; ?></td>
                     </tr>
                     <tr>
-                        <td class="u-text-semibold u-text-right">Comentarios:</td>
+                        <td class="u-text-semibold u-text-right">Comentaris:</td>
                         <?php
                         $nota = htmlentities($nota, null, 'utf-8');
                         $notatext = str_replace("&nbsp;", " ", $nota);
@@ -131,11 +131,11 @@ if ($_SESSION['image_is_logged_in'] == 'true') {
                     <tbody>
 
                     <tr>
-                        <td class="u-text-semibold u-text-right">Nombre:</td>
+                        <td class="u-text-semibold u-text-right">Nom:</td>
                         <td class="cos"><?php echo $nomf; ?></td>
                     </tr>
                     <tr>
-                        <td class="u-text-semibold u-text-right">Dirección:</td>
+                        <td class="u-text-semibold u-text-right">Adreça:</td>
                         <td class="cos"><?php echo $adressf; ?></td>
                     </tr>
                     <tr>
